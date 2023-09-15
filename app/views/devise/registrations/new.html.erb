@@ -1,0 +1,36 @@
+<div class="user-container">
+  <div class="user-form">
+    <div class="row">
+      <div class="col-md-6 mx-auto mt-4">
+        <h2>sign up</h2>
+        <%= form_with model: @user, url: user_registration_path do |f| %>
+          <div class="mb-3">
+            <%= f.label :name, class: "form-label" %>
+            <%= f.text_field :name, class: "form-control" %>
+          </div>
+          <div class="mb-3">
+            <%= f.label :email, class: "form-label" %>
+            <%= f.email_field :email, class: "form-control" %>
+          </div>
+          <div class="mb-3">
+            <%= f.label :password, class: "form-label" %>
+            <%= f.password_field :password, class: "form-control" %>
+          </div>
+          <div class="mb-3">
+            <%= f.label :password_confirmation, class: "form-label" %>
+            <%= f.password_field :password_confirmation, class: "form-control" %>
+          </div>
+          <%= f.submit "Sign Up", class: "btn btn-primary" %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="user-bottom mx-auto">
+  <div class="comment-space">
+    <p>君が新しいお友達？<br>これからよろしくね!</p>
+  </div>
+  <div class="robo-space">
+    <%= image_tag "896.png", class:"robo1-image"%>
+  </div>
+</div>
