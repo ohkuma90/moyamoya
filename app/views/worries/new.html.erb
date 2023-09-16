@@ -3,18 +3,18 @@
     <div class="row">
       <div class="col-md-6 mx-auto mt-3">
         <h3 class="h-color">モヤモヤを吐き出そう</h3>
-        <%= form_with model: @user, url: user_registration_path do |f| %>
+        <%= form_with model: @worry, local: true do |f| %>
           <div class="mb-3">
             <p class="form-label"> 素直な気持ち <span class="text-danger">(必須)</span></p>
-            <%= f.text_area :name, class: "form-control text-area" %>
+            <%= f.text_area :text, class: "form-control text-area" %>
           </div>
           <div class="mb-3">
             <p class="form-label"> モヤモヤの種類 <span class="text-danger">(必須)</span></p>
-            <%= f.email_field :email, class: "form-control" %>
+            <%= f.collection_select(:category_id, Category.all, :id, :name, {}, {class:"form-control", id:"dropdown1"}) %>
           </div>
           <div class="mb-3">
             <p class="form-label"> モヤモヤの題名 <span class="text-danger">(必須)</span></p>
-            <%= f.password_field :password, class: "form-control" %>
+            <%= f.password_field :title, class: "form-control" %>
           </div>
           <%= f.submit "保存", class: "btn btn-primary" %>
         <% end %>
