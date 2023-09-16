@@ -6,4 +6,9 @@ class Worry < ApplicationRecord
     validates :category_id, numericality: { other_than: 1, message: "can't be blank" }
     validates :title
   end
+
+  # アクティブハッシュのアソシエーション
+  extend ActiveHash::Associations::ActiveRecordExtensions
+  belongs_to :category
+
 end
