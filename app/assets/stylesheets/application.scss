@@ -1,0 +1,78 @@
+@import "bootstrap";
+@import url('https://fonts.googleapis.com/css2?family=DotGothic16&display=swap');
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'DotGothic16', sans-serif;
+  background-color: #a2a2ab;
+}
+
+// navbarここから
+
+.navbar {
+  background-color: #a2a2ab;
+  border-bottom: 20px solid #1f1e63;
+  color: #1f1e63;
+}
+
+.nav-link {
+  color: #1f1e63;
+}
+
+// nevbarここまで
+
+.user-container {
+  display: flex;
+  justify-content: center;
+}
+
+.user-form {
+  margin-top: 40px;
+  background-color: #dcd5c8;
+  height: 480px;
+  width: 80vw;
+  border-radius: 10px;
+  border: 2px solid #1f1e63;
+}
+
+.col-md-6 {
+  width: 80%;
+}
+
+.form-label {
+  color: #1f1e63;
+}
+
+h2 {
+  color: #1f1e63;
+}
+
+.btn {
+  background-color: #1f1e63;
+  border: 2px solid #1f1e63;
+  color: #dcd5c8;
+}
+
+.robo1-image {
+  width: 200px;
+  height: 150px;
+}
+
+.user-bottom {
+  display: flex;
+  width: 80vw;
+  margin-top: 20px;
+}
+
+.comment-space {
+  width: 50%;
+  text-align: right;
+}
+
+.robo-space {
+  width: 50%;
+  padding-right: 20px;
+}

@@ -5,12 +5,41 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css">
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
   </head>
 
   <body>
+    <%# Nav bar部分 %>
+    <nav class="navbar navbar-expand-md navbar-light py-3 d-flex">
+      <div class="container">
+        <%= link_to "moyamoya", root_path, class: "nav-link fs-1" %>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <% if user_signed_in? %>
+              <li class="nav-stock">
+                <h3 class="nav-link mt-1"><%= current_user.name %>でログイン中</h3>
+              </li>
+              <li class="nav-stock">
+                <%= link_to "log out", destroy_user_session_path, data: { turbo_method: :delete }, class: "nav-link"%>
+              </li>
+            <% else %>
+              <li class="nav-stock">
+                <%= link_to "log in", new_user_session_path, class: "nav-link" %>
+              </li>
+              <li class="nav-stock">
+                <%= link_to "sign up", new_user_registration_path, class: "nav-link" %>
+              </li>
+            <% end %>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <%# Nav bar部分終了 %>
     <%= yield %>
   </body>
 </html>
