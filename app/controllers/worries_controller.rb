@@ -1,6 +1,10 @@
 class WorriesController < ApplicationController
 
   def index
+    @worries2 = current_user.worries.where(category_id: 2).includes(:user)
+    @worries3 = current_user.worries.where(category_id: 3).includes(:user)
+    @worries4 = current_user.worries.where(category_id: 4).includes(:user)
+    @worries5 = current_user.worries.where(category_id: 5).includes(:user)
   end
 
   def new

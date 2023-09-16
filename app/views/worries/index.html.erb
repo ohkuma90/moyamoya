@@ -1,0 +1,41 @@
+<div class="index-container mx-auto">
+  <div class="index-wrapper mx-auto">
+    <h3 class="h-color">〇モヤモヤ一覧</h3>
+    <div class="wrapper mt-1">
+      <h3 class="h-color">～人間関係のこと～</h3>
+      <% @worries2.each do |worry| %>
+        <div class="moya-wrapper">
+          <h5 class="h-color"><%= worry.title %></h5>
+          <p><%= worry.created_at.to_date %></p>
+        </div>
+      <% end %>
+    </div>
+    <div class="wrapper ">
+      <h3 class="h-color">～お金のこと～</h3>
+      <% @worries3.each do |worry| %>
+        <div class="moya-wrapper">
+          <h5 class="h-color"><%= worry.title %></h5>
+          <p><%= worry.created_at.to_date %></p>
+        </div>
+      <% end %>
+    </div>
+    <div class="wrapper ">
+      <h3 class="h-color">～健康のこと～</h3>
+      <% @worries4.each do |worry| %>
+        <div class="moya-wrapper">
+          <h5 class="h-color"><%= worry.title %></h5>
+          <p><%= worry.created_at.to_date %></p>
+        </div>
+      <% end %>
+    </div>
+    <div class="wrapper ">
+      <h3 class="h-color">～将来のこと～</h3>
+      <% @worries5.each do |worry| %>
+        <div class="moya-wrapper">
+          <h5 class="h-color"><%= worry.title %></h5>
+          <p><%= worry.created_at.to_date %></p>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
