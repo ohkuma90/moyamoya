@@ -24,12 +24,12 @@ body {
 
 // nevbarここまで
 
-.user-container {
+.container {
   display: flex;
   justify-content: center;
 }
 
-.user-form {
+.form {
   margin-top: 40px;
   background-color: #dcd5c8;
   height: 480px;
@@ -61,7 +61,7 @@ h2 {
   height: 150px;
 }
 
-.user-bottom {
+.form-bottom {
   display: flex;
   width: 80vw;
   margin-top: 20px;
