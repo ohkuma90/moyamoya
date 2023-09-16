@@ -1,0 +1,17 @@
+<div class="index-container mx-auto">
+  <div class="index-wrapper mx-auto">
+    <div class="wrapper mt-5">
+      <h3 class="h-color worry-title mb-3">～<%= @worry.title %>～</h3>
+        <h4 class="h-color worry-title">モヤモヤの種類：<%= @worry.category.name %></h4>
+        <div class="moya-wrapper">
+          <p class="h-color worry-text"><%= @worry.text.gsub("\n", '<br>').html_safe %></p>
+          <p><%= @worry.created_at.to_date %></p>
+        </div>
+    </div>
+  </div>
+</div>
+
+<div class="show-links mb-3">
+  <%= link_to 'このモヤモヤを削除', worry_path(@worry.id), data: { turbo_method: :delete }, class:"links"%>
+  <%= link_to 'このモヤモヤを解決', '#', class:"links"%>
+</div>

@@ -1,4 +1,5 @@
 class WorriesController < ApplicationController
+  before_action :show_check, only: :show
 
   def index
     @worries2 = current_user.worries.where(category_id: 2).includes(:user)
@@ -20,10 +21,27 @@ class WorriesController < ApplicationController
     end
   end
 
+  def show
+    @worry = Worry.find(params[:id])
+  end
+
+  def destroy
+    worry = Worry.find(params[:id])
+    worry.destroy
+    redirect_to root_path
+  end
+
   private
 
   def worry_params
     params.require(:worry).permit(:text, :category_id, :title).merge(user_id: current_user.id)
+  end
+
+  def show_check
+    @worry = Worry.find(params[:id])
+    if @worry.user_id != current_user.id
+      redirect_to root_path
+    end
   end
 
 end

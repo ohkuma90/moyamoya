@@ -6,7 +6,7 @@
       <% @worries2.each do |worry| %>
         <div class="moya-wrapper">
           <h5 class="h-color"><%= worry.title %></h5>
-          <p><%= worry.created_at.to_date %></p>
+          <p><%= worry.created_at.to_date %> <%= link_to '詳細', worry_path(worry.id), class: "h-color" %></p>
         </div>
       <% end %>
     </div>
@@ -15,7 +15,7 @@
       <% @worries3.each do |worry| %>
         <div class="moya-wrapper">
           <h5 class="h-color"><%= worry.title %></h5>
-          <p><%= worry.created_at.to_date %></p>
+          <p><%= worry.created_at.to_date %> <%= link_to '詳細', worry_path(worry.id), class: "h-color" %></p>
         </div>
       <% end %>
     </div>
@@ -24,7 +24,7 @@
       <% @worries4.each do |worry| %>
         <div class="moya-wrapper">
           <h5 class="h-color"><%= worry.title %></h5>
-          <p><%= worry.created_at.to_date %></p>
+          <p><%= worry.created_at.to_date %> <%= link_to '詳細', worry_path(worry.id), class: "h-color" %></p>
         </div>
       <% end %>
     </div>
@@ -33,7 +33,7 @@
       <% @worries5.each do |worry| %>
         <div class="moya-wrapper">
           <h5 class="h-color"><%= worry.title %></h5>
-          <p><%= worry.created_at.to_date %></p>
+          <p><%= worry.created_at.to_date %> <%= link_to '詳細', worry_path(worry.id), class: "h-color" %></p>
         </div>
       <% end %>
     </div>
