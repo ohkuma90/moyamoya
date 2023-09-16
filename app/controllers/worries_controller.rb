@@ -24,6 +24,12 @@ class WorriesController < ApplicationController
     @worry = Worry.find(params[:id])
   end
 
+  def destroy
+    worry = Worry.find(params[:id])
+    worry.destroy
+    redirect_to root_path
+  end
+
   private
 
   def worry_params
