@@ -94,12 +94,12 @@ h2 {
 
 // 一覧表示関連
 .index-container {
-  width: 80%;
+  width: 88%;
   overflow: visible;
 }
 
 .index-wrapper {
-  width: 88%;
+  width: 96%;
   margin-top: 20px;
   display: inline-block;
 }
@@ -115,9 +115,31 @@ h2 {
   background-color: #dcd5c8;
   border-radius: 10px;
   margin-bottom: 5px;
-  padding-left: 5px;
+  padding: 10px;
 }
 
 .wrapper {
   margin-bottom: 40px;
+}
+
+.worry-text {
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
+
+.worry-title {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.show-links {
+  text-align: center;
+}
+
+.links {
+  background-color: #1f1e63;
+  color: #dcd5c8;
+  text-decoration: none;
+  padding: 15px;
+  border-radius: 10px;
 }
