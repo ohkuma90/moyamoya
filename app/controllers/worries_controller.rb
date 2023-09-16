@@ -18,7 +18,7 @@ class WorriesController < ApplicationController
 
   private
 
-  def stock_params
+  def worry_params
     params.require(:worry).permit(:text, :category_id, :title).merge(user_id: current_user.id)
   end
 

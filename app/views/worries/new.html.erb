@@ -14,7 +14,7 @@
           </div>
           <div class="mb-3">
             <p class="form-label"> モヤモヤの題名 <span class="text-danger">(必須)</span></p>
-            <%= f.password_field :title, class: "form-control" %>
+            <%= f.text_field :title, class: "form-control" %>
           </div>
           <%= f.submit "保存", class: "btn btn-primary" %>
         <% end %>
