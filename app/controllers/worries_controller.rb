@@ -20,6 +20,10 @@ class WorriesController < ApplicationController
     end
   end
 
+  def show
+    @worry = Worry.find(params[:id])
+  end
+
   private
 
   def worry_params
