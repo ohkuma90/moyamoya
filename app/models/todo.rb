@@ -11,4 +11,5 @@ class Todo < ApplicationRecord
   # アクティブハッシュのアソシエーション
   extend ActiveHash::Associations::ActiveRecordExtensions
   belongs_to :category
+  belongs_to :priority
 end
