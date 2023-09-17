@@ -1,13 +1,12 @@
-class Category < ActiveHash::Base
+class Priority < ActiveHash::Base
   self.data = [
     { id: 1, name: '---' },
-    { id: 2, name: '人間関係のこと' },
-    { id: 3, name: 'お金のこと' },
-    { id: 4, name: '健康のこと' },
-    { id: 5, name: '将来のこと' },
+    { id: 2, name: '1' },
+    { id: 3, name: '2' },
+    { id: 4, name: '3' },
+    { id: 5, name: '4' },
   ]
 
   include ActiveHash::Associations
-  has_many :worries
   has_many :todos
 end
