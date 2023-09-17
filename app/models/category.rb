@@ -9,4 +9,5 @@ class Category < ActiveHash::Base
 
   include ActiveHash::Associations
   has_many :worries
+  has_many :todos
 end

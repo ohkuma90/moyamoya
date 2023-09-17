@@ -58,10 +58,10 @@ Things you may want to cover:
 
 | Column      | Type       | Options                        |
 | ----------- | ---------- | ------------------------------ |
-| w_title     | string     | null: false                    |
 | category_id | integer    | null: false                    |
-| todo        | text       | null: false                    |
-| priority    | integer    | null: false                    |
+| title       | string     | null: false                    |
+| memo        | text       | null: false                    |
+| priority_id | integer    | null: false                    |
 | user        | references | null: false, foreign_key: true |
 
 ### Association
