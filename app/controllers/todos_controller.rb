@@ -1,6 +1,6 @@
 class TodosController < ApplicationController
   before_action :todo_check, only: [:show, :edit]
-  before_action :set_todo, only: [:show, :edit, :update]
+  before_action :set_todo, only: [:show, :edit, :update, :destroy]
 
   def index
     @todos2 = current_user.todos.where(category_id: 2).includes(:user)
@@ -30,14 +30,14 @@ class TodosController < ApplicationController
 
   def update
     if @todo.update(todo_params)
-      redirect_to item_path(@todo)
+      redirect_to todo_path(@todo)
     else
       render :edit, status: :unprocessable_entity
     end
   end
 
   def destroy
-    if current_user == @todo.user
+    if current_user.id == @todo.user_id
       @todo.destroy
       redirect_to root_path
     else

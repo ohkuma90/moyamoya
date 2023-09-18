@@ -26,7 +26,7 @@ class WorriesController < ApplicationController
   end
 
   def destroy
-    if current_user == @worry.user
+    if current_user.id == @worry.user_id
       @worry.destroy
       redirect_to root_path
     else
