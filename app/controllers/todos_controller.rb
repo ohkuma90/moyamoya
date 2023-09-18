@@ -1,5 +1,7 @@
 class TodosController < ApplicationController
-  
+  before_action :todo_check, only: [:show, :edit]
+  before_action :set_todo, only: [:show, :edit, :update, :destroy]
+
   def index
     @todos2 = current_user.todos.where(category_id: 2).includes(:user)
     @todos3 = current_user.todos.where(category_id: 3).includes(:user)
@@ -21,19 +23,43 @@ class TodosController < ApplicationController
   end
 
   def show
-    @todo = Todo.find(params[:id])
+  end
+
+  def edit
+  end
+
+  def update
+    if @todo.update(todo_params)
+      redirect_to todo_path(@todo)
+    else
+      render :edit, status: :unprocessable_entity
+    end
   end
 
   def destroy
-    todo = Todo.find(params[:id])
-    todo.destroy
-    redirect_to todos_path
+    if current_user.id == @todo.user_id
+      @todo.destroy
+      redirect_to todos_path
+    else
+      redirect_to root_path
+    end
   end
 
   private
 
   def todo_params
     params.require(:todo).permit(:title, :category_id, :memo, :priority_id).merge(user_id: current_user.id)
+  end
+
+  def set_todo
+    @todo = Todo.find(params[:id])
+  end
+
+  def todo_check
+    @todo = Todo.find(params[:id])
+    if @todo.user_id != current_user.id
+      redirect_to root_path
+    end
   end
 
 end
