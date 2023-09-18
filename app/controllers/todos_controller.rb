@@ -1,6 +1,10 @@
 class TodosController < ApplicationController
   
   def index
+    @todos2 = current_user.todos.where(category_id: 2).includes(:user)
+    @todos3 = current_user.todos.where(category_id: 3).includes(:user)
+    @todos4 = current_user.todos.where(category_id: 4).includes(:user)
+    @todos5 = current_user.todos.where(category_id: 5).includes(:user)
   end
 
   def new
