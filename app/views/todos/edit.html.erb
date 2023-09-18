@@ -1,0 +1,36 @@
+<div class="container">
+  <div class="form">
+    <div class="row">
+      <div class="col-md-6 mx-auto mt-3">
+        <h3 class="h-color">やることを書き出そう</h3>
+        <%= form_with model: @todo, local: true do |f| %>
+          <div class="mb-3">
+            <p class="form-label"> TODO <span class="text-danger">(必須)</span></p>
+            <%= f.text_field :title, class: "form-control" %>
+          </div>
+          <div class="mb-3">
+            <p class="form-label"> モヤモヤの種類 <span class="text-danger">(必須)</span></p>
+            <%= f.collection_select(:category_id, Category.all, :id, :name, {}, {class:"form-control", id:"dropdown1"}) %>
+          </div>
+          <div class="mb-3">
+            <p class="form-label"> メモ <span class="text-danger">(必須)</span></p>
+            <%= f.text_area :memo, class: "form-control text-area2" %>
+          </div>
+          <div class="mb-3">
+            <p class="form-label"> 優先度 <span class="text-danger">(必須)</span></p>
+            <%= f.collection_select(:priority_id, Priority.all, :id, :name, {}, {class:"form-control", id:"dropdown1"}) %>
+          </div>
+          <%= f.submit "保存", class: "btn btn-primary" %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="form-bottom mx-auto">
+  <div class="comment-space">
+    <p>やること更新だね！<br>保存しておくね。</p>
+  </div>
+  <div class="robo-space">
+    <%= image_tag "896.png", class:"robo1-image"%>
+  </div>
+</div>
