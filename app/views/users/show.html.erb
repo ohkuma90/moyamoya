@@ -1,0 +1,22 @@
+<div class="user-show mx-auto">
+  <div>
+    <p class="h-color user-message">今日も来てくれてありがとう。<br>無理せず一歩ずつ頑張ろう！</p>
+    <%= image_tag "896.png", class:"robo1-image"%>
+  </div>
+</div>
+<div class="index-container mx-auto">
+  <div class="index-wrapper mx-auto">
+    <h3 class="h-color">〇アクション宣言一覧</h3>
+    <div class="wrapper mt-1">
+      <% @declarations.each do |declaration| %>
+        <div class="moya-wrapper">
+          <div class="todo-title">
+            <h5 class="h-color"><%= declaration.declaration %></h5>
+            <p class="h-color worry-text"><%= declaration.comment.gsub("\n", '<br>').html_safe %></p>
+            <p><%= declaration.created_at.to_date %>  <%= link_to '削除', declaration_path(declaration.id), data: { turbo_method: :delete }, class:"h-color"%></p>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
