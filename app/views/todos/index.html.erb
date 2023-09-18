@@ -1,1 +1,61 @@
-HELLO!!INDEX!!
+<div class="index-container mx-auto">
+  <div class="index-wrapper mx-auto">
+    <h3 class="h-color">〇TODO一覧</h3>
+    <div class="wrapper mt-1">
+      <h3 class="h-color">～人間関係のこと～</h3>
+      <% @todos2.each do |todo| %>
+        <div class="todo-wrapper">
+          <div class="todo-title">
+            <h5 class="h-color"><%= todo.title %></h5>
+            <p><%= todo.created_at.to_date %> 優先度：<%= todo.priority.name %> <%= link_to '詳細', todo_path(todo.id), class: "h-color" %></p>
+          </div>
+          <div>
+            <%= link_to '完了', todo_path(todo.id), data: { turbo_method: :delete }, class:"links"%>
+          </div>
+        </div>
+      <% end %>
+    </div>
+    <div class="wrapper ">
+      <h3 class="h-color">～お金のこと～</h3>
+      <% @todos3.each do |todo| %>
+        <div class="todo-wrapper">
+          <div class="todo-title">
+            <h5 class="h-color"><%= todo.title %></h5>
+            <p><%= todo.created_at.to_date %> 優先度：<%= todo.priority.name %> <%= link_to '詳細', todo_path(todo.id), class: "h-color" %></p>
+          </div>
+          <div>
+            <%= link_to '完了', todo_path(todo.id), data: { turbo_method: :delete }, class:"links"%>
+          </div>
+        </div>
+      <% end %>
+    </div>
+    <div class="wrapper ">
+      <h3 class="h-color">～健康のこと～</h3>
+      <% @todos4.each do |todo| %>
+        <div class="todo-wrapper">
+          <div class="todo-title">
+            <h5 class="h-color"><%= todo.title %></h5>
+            <p><%= todo.created_at.to_date %> 優先度：<%= todo.priority.name %> <%= link_to '詳細', todo_path(todo.id), class: "h-color" %></p>
+          </div>
+          <div>
+            <%= link_to '完了', todo_path(todo.id), data: { turbo_method: :delete }, class:"links"%>
+          </div>
+        </div>
+      <% end %>
+    </div>
+    <div class="wrapper ">
+      <h3 class="h-color">～将来のこと～</h3>
+      <% @todos5.each do |todo| %>
+        <div class="todo-wrapper">
+          <div class="todo-title">
+            <h5 class="h-color"><%= todo.title %></h5>
+            <p><%= todo.created_at.to_date %> 優先度：<%= todo.priority.name %> <%= link_to '詳細', todo_path(todo.id), class: "h-color" %></p>
+          </div>
+          <div>
+            <%= link_to '完了', todo_path(todo.id), data: { turbo_method: :delete }, class:"links"%>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
