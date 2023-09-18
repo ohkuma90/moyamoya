@@ -73,7 +73,7 @@ Things you may want to cover:
 
 | Column      | Type       | Options                        |
 | ----------- | ---------- | ------------------------------ |
-| declaration | text       | null: false                    |
+| declaration | string     | null: false                    |
 | comment     | text       | null: false                    |
 | user        | references | null: false, foreign_key: true |
 

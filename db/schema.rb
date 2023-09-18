@@ -10,7 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_09_17_063137) do
+ActiveRecord::Schema[7.0].define(version: 2023_09_18_060832) do
+  create_table "declarations", charset: "utf8", force: :cascade do |t|
+    t.string "declaration", null: false
+    t.text "comment", null: false
+    t.bigint "user_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_declarations_on_user_id"
+  end
+
   create_table "todos", charset: "utf8", force: :cascade do |t|
     t.string "title", null: false
     t.integer "category_id", null: false
@@ -45,6 +54,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_09_17_063137) do
     t.index ["user_id"], name: "index_worries_on_user_id"
   end
 
+  add_foreign_key "declarations", "users"
   add_foreign_key "todos", "users"
   add_foreign_key "worries", "users"
 end
