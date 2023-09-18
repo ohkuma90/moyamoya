@@ -1,3 +1,15 @@
-HELLO!
-declaretions
-index!
+<div class="index-container mx-auto">
+  <div class="index-wrapper mx-auto">
+    <h3 class="h-color">〇みんなのアクション宣言</h3>
+    <div class="wrapper mt-3">
+      <% @declarations.each do |declaration| %>
+        <div class="moya-wrapper">
+          <h5 class="h-color"><%= declaration.user.name %></h5>
+          <h5 class="h-color"><%= declaration.declaration %></h5>
+          <p class="h-color worry-text"><%= declaration.comment.gsub("\n", '<br>').html_safe %></p>
+          <p><%= declaration.created_at.to_date %></p>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>

@@ -1,5 +1,7 @@
 class DeclarationsController < ApplicationController
+
   def index
+    @declarations = Declaration.includes(:user).order('created_at DESC')
   end
 
   def new
