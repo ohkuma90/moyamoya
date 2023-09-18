@@ -39,7 +39,7 @@ class TodosController < ApplicationController
   def destroy
     if current_user.id == @todo.user_id
       @todo.destroy
-      redirect_to root_path
+      redirect_to todos_path
     else
       redirect_to root_path
     end
