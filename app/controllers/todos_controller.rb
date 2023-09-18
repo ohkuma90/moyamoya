@@ -20,6 +20,10 @@ class TodosController < ApplicationController
     end
   end
 
+  def show
+    @worry = Worry.find(params[:id])
+  end
+
   def destroy
     todo = Todo.find(params[:id])
     todo.destroy
