@@ -14,4 +14,10 @@ class DeclarationsController < ApplicationController
       render :new, status: :unprocessable_entity
     end
   end
+
+  private
+
+  def declaration_params
+    params.require(:declaration).permit(:declaration, :comment).merge(user_id: current_user.id)
+  end
 end
