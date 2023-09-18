@@ -147,3 +147,15 @@ h2 {
   padding: 15px;
   border-radius: 10px;
 }
+
+.todo-wrapper {
+  display: flex;
+  margin-left: 10px;
+  background-color: #dcd5c8;
+  border-radius: 10px;
+  margin-bottom: 5px;
+  padding: 10px;
+  align-items: center;
+  justify-content: space-between;
+}
+
