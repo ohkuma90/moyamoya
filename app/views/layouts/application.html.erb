@@ -18,11 +18,11 @@
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
+        <div class="collapse navbar-collapse pt-1" id="navbarNav">
           <ul class="navbar-nav ms-auto">
             <% if user_signed_in? %>
               <li class="nav-stock">
-                <h3 class="nav-link mt-1"><%= current_user.name %>でログイン中</h3>
+                <%= link_to "#{current_user.name}でログイン中", user_path(current_user.id), class: "nav-link"%>
               </li>
               <li class="nav-stock">
                 <%= link_to "モヤモヤを吐き出す", new_worry_path, class: "nav-link"%>
