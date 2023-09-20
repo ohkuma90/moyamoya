@@ -1,4 +1,5 @@
 class DeclarationsController < ApplicationController
+  before_action :authenticate_user!
 
   def index
     @declarations = Declaration.includes(:user).order('created_at DESC')
@@ -23,7 +24,7 @@ class DeclarationsController < ApplicationController
       @declaration.destroy
       redirect_to user_path(current_user.id)
     else
-      redirect_to root_path
+      redirect_to worries_path
     end
   end
 
