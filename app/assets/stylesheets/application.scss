@@ -1,12 +1,12 @@
 @import "bootstrap";
-@import url('https://fonts.googleapis.com/css2?family=DotGothic16&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400&display=swap');
 
 * {
   box-sizing: border-box;
 }
 
 body {
-  font-family: 'DotGothic16', sans-serif;
+  font-family: 'Noto Sans Japanese', sans-serif;
   background-color: #a2a2ab;
 }
 
@@ -28,7 +28,7 @@ p {
 
 // nevbarここまで
 
-// フォーム関連
+//フォーム関連
 .container {
   display: flex;
   justify-content: center;
@@ -165,4 +165,34 @@ h2 {
   height: 200px;
   display: flex;
   justify-content: center;
+}
+
+// welcomeページここから
+
+.hero {
+  margin-top: 10px;
+  width: 80%;
+  height: 40vh;
+  display: flex;
+  align-items: center;
+  background-image: image-url('cloud.png');
+  background-size: contain !important;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  position: relative;
+  z-index: 2;
+}
+
+.font-weight {
+  font-weight: bold;
+}
+
+.container-w {
+  width: 80%;
+}
+
+.img-size {
+  width: 300px;
+  height: auto;
 }

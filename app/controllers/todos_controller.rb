@@ -1,6 +1,7 @@
 class TodosController < ApplicationController
   before_action :todo_check, only: [:show, :edit]
   before_action :set_todo, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!
 
   def index
     @todos2 = current_user.todos.where(category_id: 2).includes(:user)
@@ -41,7 +42,7 @@ class TodosController < ApplicationController
       @todo.destroy
       redirect_to todos_path
     else
-      redirect_to root_path
+      redirect_to worries_path
     end
   end
 
@@ -58,7 +59,7 @@ class TodosController < ApplicationController
   def todo_check
     @todo = Todo.find(params[:id])
     if @todo.user_id != current_user.id
-      redirect_to root_path
+      redirect_to worries_path
     end
   end
 

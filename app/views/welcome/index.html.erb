@@ -1,0 +1,73 @@
+<%# hero section %>
+<div class="hero mx-auto" id="home">
+  <div class="container">
+    <div class="row">
+      <div class="text-center mx-auto ">
+        <p class="mb-1">そのモヤモヤは<br>あなたを変えるかも。</p>
+        <h3 class="font-weight h-color">「moyamoya」</h3>
+      </div>
+    </div>
+  </div>
+</div>
+<%# hero section %>
+
+<div class="container-w marketing mx-auto">
+
+    <!-- START THE FEATURETTES -->
+
+    <hr class="featurette-divider mt-5 mb-5">
+
+    <div class="row featurette">
+      <div class="col-md-7">
+        <h2 class="featurette-heading fw-normal lh-1">モヤモヤを吐き出そう</h2>
+        <p class="lead">まずは自分に素直に<br>嫌なこと・不安なこと・うまくいかない事を吐き出してみよう。<br>
+                        モヤモヤをが産まれたら出来るだけ早く吐き出そう。</p>
+      </div>
+      <div class="col-md-5">
+        <%= image_tag "worry.png", class:"bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto img-size"%>
+      </div>
+    </div>
+
+    <hr class="featurette-divider mt-5 mb-5">
+
+    <div class="row featurette">
+      <div class="col-md-7 order-md-2">
+        <h2 class="featurette-heading fw-normal lh-1">アクションを決めよう</h2>
+        <p class="lead">モヤモヤの正体が分かったらアクションを考えよう。<br>TODOに追加して忘れないようにしよう。</p>
+      </div>
+      <div class="col-md-5 order-md-1">
+        <%= image_tag "todo.png", class:"bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto img-size"%>
+      </div>
+    </div>
+
+    <hr class="featurette-divider mt-5 mb-5">
+
+    <div class="row featurette">
+      <div class="col-md-7">
+        <h2 class="featurette-heading fw-normal lh-1">アクションを宣言しよう！</h2>
+        <p class="lead">TODOにまとめたアクションプランを宣言してみよう！<br>宣言することで自信がつくよ！<br>君の行動が誰かの勇気に繋がるかも！</p>
+      </div>
+      <div class="col-md-5">
+        <%= image_tag "diclaration.png", class:"bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto img-size"%>
+      </div>
+    </div>
+
+    <hr class="featurette-divider mt-5 mb-5">
+
+    <div class="row featurette">
+      <div class="col-md-7 order-md-2">
+        <h2 class="featurette-heading fw-normal lh-1">宣言の確認</h2>
+        <p class="lead mb-3">自分がした宣言はマイページで管理できるよ<br>無理せずゆっくり達成していこう！<br>
+                        僕はいつも君を応援しているよ！</p>
+        <%= link_to '新規登録はこちらから！', new_user_registration_path, class:"links"%>
+      </div>
+      <div class="col-md-5 order-md-1">
+        <%= image_tag "896.png", class:"bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto img-size"%>
+      </div>
+    </div>
+
+    <hr class="featurette-divider mt-5 mb-5">
+
+    <!-- /END THE FEATURETTES -->
+
+  </div>

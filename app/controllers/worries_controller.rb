@@ -1,6 +1,7 @@
 class WorriesController < ApplicationController
   before_action :show_check, only: :show
   before_action :set_worry, only: [:show, :destroy]
+  before_action :authenticate_user!
 
   def index
     @worries2 = current_user.worries.where(category_id: 2).includes(:user)
@@ -16,7 +17,7 @@ class WorriesController < ApplicationController
   def create
     @worry = Worry.new(worry_params)
     if @worry.save
-      redirect_to root_path
+      redirect_to worries_path
     else
       render :new, status: :unprocessable_entity
     end
@@ -28,9 +29,9 @@ class WorriesController < ApplicationController
   def destroy
     if current_user.id == @worry.user_id
       @worry.destroy
-      redirect_to root_path
+      redirect_to worries_path
     else
-      redirect_to root_path
+      redirect_to worries_path
     end
   end
 
@@ -47,7 +48,7 @@ class WorriesController < ApplicationController
   def show_check
     @worry = Worry.find(params[:id])
     if @worry.user_id != current_user.id
-      redirect_to root_path
+      redirect_to worries_path
     end
   end
 
