@@ -16,3 +16,6 @@
   <%= link_to 'このTODOを完了', todo_path(@todo.id), data: { turbo_method: :delete }, class:"links"%>
   <%= link_to 'このTODOを編集', edit_todo_path(@todo.id), class:"links"%>
 </div>
+<div class="mt-5 text-center">
+  <%= link_to 'このアクションを宣言する', new_declaration_path, class:"links"%>
+</div>
