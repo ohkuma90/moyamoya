@@ -25,6 +25,9 @@
                 <%= link_to "#{current_user.name}でログイン中", user_path(current_user.id), class: "nav-link"%>
               </li>
               <li class="nav-stock">
+                <%= link_to "使い方を確認", root_path, class: "nav-link"%>
+              </li>
+              <li class="nav-stock">
                 <%= link_to "モヤモヤを吐き出す", new_worry_path, class: "nav-link"%>
               </li>
               <li class="nav-stock">
