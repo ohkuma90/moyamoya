@@ -13,5 +13,5 @@
 
 <div class="show-links mb-3">
   <%= link_to 'このモヤモヤを削除', worry_path(@worry.id), data: { turbo_method: :delete }, class:"links"%>
-  <%= link_to '解決に向けTODOを作成', new_todo_path, class:"links"%>
+  <%= link_to '解決に向けTODOを作成', new_todo_path, data:{turbo: false}, class:"links"%>
 </div>
