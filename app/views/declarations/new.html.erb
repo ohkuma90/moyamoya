@@ -3,7 +3,7 @@
     <div class="row">
       <div class="col-md-6 mx-auto mt-3">
         <h3 class="h-color mt-1">宣言しよう！</h3>
-        <%= form_with model: @declaration, local: true do |f| %>
+        <%= form_with model: @declaration, id: 'form', local: true do |f| %>
           <div class="mb-3 mt-4">
             <p class="form-label"> これからやること！ <span class="text-danger">(必須)</span></p>
             <%= f.text_field :declaration, class: "form-control" %>
@@ -20,7 +20,9 @@
 </div>
 <div class="form-bottom mx-auto">
   <div class="comment-space">
-    <p>あとはやるだけ！<br>行動できる君は、<br>誰よりかっこいい！</p>
+    <div id="robot-comment">
+      <p>あとはやるだけ！<br>行動できる君は、<br>誰よりかっこいい！</p>
+    </div>
   </div>
   <div class="robo-space">
     <%= image_tag "896.png", class:"robo1-image"%>
