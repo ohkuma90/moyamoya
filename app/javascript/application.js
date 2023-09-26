@@ -6,3 +6,4 @@
 import "@hotwired/turbo-rails"
 import "controllers"
 import "text"
+import "my_text"

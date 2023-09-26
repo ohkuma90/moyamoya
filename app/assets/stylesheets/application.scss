@@ -160,11 +160,10 @@ h2 {
 }
 
 .user-show {
-  width: 88%;
   margin-top: 40px;
-  height: 200px;
   display: flex;
   justify-content: center;
+  height: 180px;
 }
 
 // welcomeページここから
@@ -195,4 +194,34 @@ h2 {
 .img-size {
   width: 300px;
   height: auto;
+}
+
+.robo2-image {
+  width: 200px;
+  height: 150px;
+  position: absolute;
+  top: 200px;
+  left: 630px;
+}
+
+@media (max-width: 1000px) {
+  .robo2-image {
+    width: 200px;
+    height: 150px;
+    position: absolute;
+    top: 250px;
+    left: 250px;
+    z-index: -1;
+  }
+}
+
+@media (max-width: 500px) {
+  .robo2-image {
+    width: 200px;
+    height: 150px;
+    position: absolute;
+    top: 200px;
+    left: 90px;
+    z-index: -1;
+  }
 }
